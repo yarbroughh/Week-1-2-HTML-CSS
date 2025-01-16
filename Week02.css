@@ -1,0 +1,26 @@
+
+h1 {
+    color:#285943;
+    font-size: 30px;
+    font-weight: bold;
+}
+h2 {
+    color: #185E5C;
+    font-size: 25px;
+    font-weight: bold;
+}
+h3 {
+    color: #086375;
+    font-size: 20px;
+    font-weight: bold;
+}
+p {
+    color: #1E0B0E;
+    font-size: 14px;
+}
+img {
+border-style: inset;
+    border-width: 20px;
+    border-color: #285943;
+    border-radius: 20px;
+}
