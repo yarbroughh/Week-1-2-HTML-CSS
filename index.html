@@ -12,7 +12,8 @@
         and a header image for the page-->
     <header>
         <!--This is the navigation section to include links to my other pages which will be set up one one line and is repeated on each page.--> 
-        <nav>
+        <nav class="navbar">
+            <img class=logo src="Images/MI-icon-brand-white.svg" alt="icon of Michigan with a leaf">
             <a href="index.html">Home</a>
             <a href="shop.html">Shop Sustainably</a>
             <a href="eat.html">Eat for the Planet</a>
@@ -20,31 +21,36 @@
         </nav>
         <!--the h1 is the most important heading and the header image is displayed using src attribute, sized to a height of 500 pixels, 
         and contains an alt tag to describe the image-->
+        <img class=hero-image src="Images/closeup-shot-river-forests-hills.jpg" alt="image of a river surrounded by hills and forests">
         <h1>Go Green, Michigan!</h1>
-        <img height="500" src="Images/closeup-shot-river-forests-hills.jpg" alt="image of a river surrounded by hills and forests">
-
     </header>
     <!--MAIN SECTION - This is the primary content of the page starting with an overview paragraph and contains one section-->
     <main>
-        <p>Our earth is a sensitive being that has experienced the negative impact of humankind over the past few hundred years. While there are certainly cycles it goes through naturally, such as the Ice Age, humans have had a great negative impact on it since the Industrial Revolution. The climate is changing and we're experiencing more drastic weather events, melting icebergs leading to rising sea levls, and disruptions to biodiversity. All of this not only impacts the earth itself, but the health of all the beings that occupy it, including humans. There are dozens of ways that each individual person can help our environment to ensure its health for generations to come.</p>
-        <!--SECTION 1 contains an h2 heading, an unordered list of 4 items, and a row of 6 images using the <img> tag. 
-        All images are sized to the same height and each contain alt tags to describe the image-->
-        <section>
-            <h2>Small Steps, Big Impact</h2>
-            <h3>Here are a few things you can do:</h3>
-                <ul>
-                    <li>Avoid using plastic</li>
-                    <li>Purchase from companies that focus on sustainability</li>
-                    <li>Eat food that is good for you and for the planet</li>
-                    <li>Volunteer at organizations working to protect our environement</li>
-                </ul>
-            <img height=250 src="Images/earth-image-1.jpg" alt="image of a hand holding a bubble with a tree in it">
-            <img height=250 src="Images/earth-image-2.jpg" alt="image of a woman laying in a field of flowers with a model of the earth above her head">
-            <img height=250 src="Images/earth-image-3.jpg" alt="illustration of an earth day poster from 2016">
-            <img height=250 src="Images/earth-image-4.jpg" alt="image of the earth as seen from space">
-            <img height=250 src="Images/earth-image-5.jpg" alt="image of a community of people holding up a giant model of the earth">
-            <img height=250 src="Images/earth-image-6.jpg" alt="image of a model of the earth with flowers creating the contients">
-        </section>
+        <div class="container">
+            <div class="white-background">
+                <p>Our earth is a sensitive being that has experienced the negative impact of humankind over the past few hundred years. While there are certainly cycles it goes through naturally, such as the Ice Age, humans have had a great negative impact on it since the Industrial Revolution. The climate is changing and we're experiencing more drastic weather events, melting icebergs leading to rising sea levls, and disruptions to biodiversity. All of this not only impacts the earth itself, but the health of all the beings that occupy it, including humans. There are dozens of ways that each individual person can help our environment to ensure its health for generations to come.</p>
+            </div>
+                <!--SECTION 1 contains an h2 heading, an unordered list of 4 items, and a row of 6 images using the <img> tag. 
+            All images are sized to the same height and each contain alt tags to describe the image-->
+            <section class="green-background">
+                <h2>Small Steps, Big Impact</h2>
+                <h3>Here are a few things you can do:</h3>
+                    <ul>
+                        <li>Avoid using plastic</li>
+                        <li>Purchase from companies that focus on sustainability</li>
+                        <li>Eat food that is good for you and for the planet</li>
+                        <li>Volunteer at organizations working to protect our environment</li>
+                    </ul>
+                <div class="image-carousel">
+                    <img height=250 src="Images/earth-image-1.jpg" alt="image of a hand holding a bubble with a tree in it">
+                    <img height=250 src="Images/earth-image-2.jpg" alt="image of a woman laying in a field of flowers with a model of the earth above her head">
+                    <img height=250 src="Images/earth-image-3.jpg" alt="illustration of an earth day poster from 2016">
+                    <img height=250 src="Images/earth-image-5.jpg" alt="image of a community of people holding up a giant model of the earth">
+                    <img height=250 src="Images/earth-image-4.jpg" alt="image of the earth as seen from space">
+                    <img height=250 src="Images/earth-image-6.jpg" alt="image of a model of the earth with flowers creating the contients">
+                </div>
+            </section>
+        </div>
     </main>
     <!--The footer uses the footer tag and typically contains contact info and copyright. It is repeated on every page.-->
     <footer>

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Volunteer</title>
+    <link rel="stylesheet" href="Week02.css">
 </head>
 
 <!--The head section above was created using ! and everything else belongs in the body tag below-->
@@ -12,31 +13,33 @@
     <!--This is the header section that was the first item I created and contains the navigation, the H1, and header image for the page-->
     <header>
         <!--This is the navigation section to include links to my other pages which will be set up one one line and is repeated on each page.--> 
-        <nav>
+        <nav class="navbar">
+            <img class=logo src="Images/MI-icon-brand-white.svg" alt="icon of Michigan with a leaf">
             <a href="index.html">Home</a>
             <a href="shop.html">Shop Sustainably</a>
             <a href="eat.html">Eat for the Planet</a>
             <a href="volunteer.html">Volunteer</a>
         </nav>
         <!--the h1 is the most important heading and is at the top of the page. The header image is sized to 500 pixels and contains an alt tag-->
+        <img class=hero-image src="Images/environment-volunteer-concept-with-group-persons.jpg" alt="image of the torsos of people wearing tee shirts that say volunteer">
         <h1>Volunteer</h1>
-        <img height="500" src="Images/environment-volunteer-concept-with-group-persons.jpg" alt="image of the torsos of people wearing tee shirts that say volunteer">
-    
     </header>
     
     <!--In the MAIN SECTION I included a paragraph and an unordered list where each item contains an external link using an a (anchor) tag and an href attribute
         which specifies the destination URL-->
     <main>
-        <p>There are endless opportunities to volunteer for organizations that are working toward helping our environment. Here are a few:</p>
-        <ul>
-            <li><a href="https://www.nature.org/en-us/get-involved/how-to-help/volunteer/">The Nature Conservancy</a></li>
-            <li><a href="https://wmeac.org/volunteer/">West Michigan Environmental Action Council</a></li>
-            <li><a href="https://www.michiganaudubon.org/get-involved/volunteer/">Michigan Audubon</a></li>
-            <li><a href="https://watershedcouncil.org/about-us/join-our-team/volunteer/">Tip of the Mitt Watershed Council</a></li>
-        </ul>
-
+        <div class="container">
+            <div class="white-background">
+                <p>Ready to make a difference? Volunteering your time is a powerful way to support environmental initiatives and contribute to a more sustainable future. Explore our directory of local organizations seeking volunteers to help with a variety of projects, from tree planting and river cleanups to community gardening and environmental education. Find your passion and connect with a cause that inspires you. If you have any questions or would like to learn more about volunteer opportunities, please feel free to contact us using the form below.</p>
+                    <ul>
+                        <li><a href="https://www.nature.org/en-us/get-involved/how-to-help/volunteer/">The Nature Conservancy</a></li>
+                        <li><a href="https://wmeac.org/volunteer/">West Michigan Environmental Action Council</a></li>
+                        <li><a href="https://www.michiganaudubon.org/get-involved/volunteer/">Michigan Audubon</a></li>
+                        <li><a href="https://watershedcouncil.org/about-us/join-our-team/volunteer/">Tip of the Mitt Watershed Council</a></li>
+                    </ul>
+            </div>
         <!--FORM SECTION This section is for a form to submit to receive more information and starts with an H2 and paragraph to introduce the form-->
-        <section>
+        <section class="form">
             <h2>For More Information</h2>
             <p>If you live in Michigan and would like more information on how you can help locally, please submit this form and we'll get back to you as soon as possible.</p>
                 <!--the form begins here and the first fields to be filled out are the main contact information. I'm using Placeholders rather than Labels here-->
@@ -46,21 +49,25 @@
                     <input type="tel" name="phone" placeholder="Phone Number"><br><br>
 
                     <!--this section of the form contains a radio input type which displays a list of which the user must choose only one-->
-                    <p>In what region do you live?</p>    
+                    <label for="region">In what region do you live?</label>
+                    <div>    
                         <input type="radio" name="region" value="Upper Peninsula">Upper Peninsula<br>
                         <input type="radio" name="region" value="Northern Michigan">Northern Michigan<br>
                         <input type="radio" name="region" value="West Michigan">West Michigan<br>
                         <input type="radio" name="region" value="Central Michigan">Central Michigan<br>
                         <input type="radio" name="region" value="Southeast Michigan">Southeast Michigan<br>
                         <input type="radio" name="region" value="I'm Not a Michigander">I'm Not a Michigander<br>
+                    </div>
 
                      <!--This field allows a user to enter a number no less than 1 and no more than 7-->
-                    <p>How many days per week can you volunteer?
+                     <label for="daysavailable">How many days per week can you volunteer?</label>
+                     <div>
                         <input type="number" name="daysavailable" min="1" max="7" step="1">
-                    </p>
+                    </div>
 
                     <!--this input is a checklist where the user can choose more than one, checking and unchecking as needed-->
-                    <p>Which days of the week? (Check all available)</p>
+                    <label for="available-days">Which days of the week? (Check all available)</label>
+                    <div>
                         <input type="checkbox" name="sunday" value="Sunday">Sunday<br>
                         <input type="checkbox" name="monday" value="Monday">Monday<br>
                         <input type="checkbox" name="tuesday" value="Tuesday">Tuesday<br>
@@ -68,22 +75,24 @@
                         <input type="checkbox" name="thursday" value="Thursday">Thursday<br>
                         <input type="checkbox" name="friday" value="Friday">Friday<br>
                         <input type="checkbox" name="saturday" value="Saturday">Saturday<br>
+                    </div>
 
                     <!--this input is aso a checkbox and can also have more than one choice-->
-                    <p>How would you like us to contact you?
+                    <label for="contact-method">How would you like us to contact you?</label>
+                    <div>
                         <input type="checkbox" name="contact_email" value="Email Me">Email Me
                         <input type="checkbox" name="contact_phone" value="Call Me">Call Me
-                    </p>
+                    </div>
         
                     <!--the date input type displays a calendar for the user to choose a date-->
-                    <p>What date could you start volunteering?
+                    <label for="start_date">What date could you start volunteering?</label>
+                    <div>
                         <input type="date" name="start_date">
-                    </p>
+                    </div>
                     <!--The select tag allows a dropdown of options to choose one item. For the next two sections of the form
                         I used the select tag and included an ID and applied a label to it.-->
-                    <p>We provide all our volunteers with a tee-shirt.</p>
-      
-                        <label for="colors">Choose a color:</label>
+                    <label>We provide all our volunteers with a tee-shirt.</label><br>
+                    <label for="colors">Choose a color:</label>
                         <select id="colors">
                             <option value="green">Green</option>
                             <option value="yellow">Yellow</option>
@@ -94,7 +103,7 @@
                             <option value="blue">Blue</option>
                         </select>
 
-                        <label for="size">Choose a size:</label>
+                    <label for="size">Choose a size:</label>
                         <select id="size">
                             <option value="women_sm">Women's Small</option>
                             <option value="women_med">Women's Medium</option>
@@ -106,13 +115,15 @@
                             <option value="men-lg">Men's Large</option>
                             <option value="men_xl">Men's Extra Large</option>
                             <option value="men_2x">Men's XXLarge</option>
-                        </select>
+                        </select><br>
 
                     <!--The textarea tag will display a box that allows a user to add and edit text within. It's used as a questions/comments box in this instance--> 
-                    <p>Do you have any questions or comments?</p>
+                    <label for="comments">Do you have any questions or comments?</label>
+                    <div>
                         <textarea rows="4" cols="50"></textarea><br><br>
-                    
-                    <!--The two input types below dispaly as buttons. The first will reset all the form fields and the second will submit for the form.-->
+                    </div>
+
+                    <!--The two input types below display as buttons. The first will reset all the form fields and the second will submit for the form.-->
                     <input type="reset" value="Clear form fields"><br><br>
                     <input type="submit" name="submit" value="Submit">
                 <!--this is the closing tag to end the form-->
@@ -120,6 +131,7 @@
         <!--this closes the section-->
         </section>
     <!--this closes the main part of the page-->
+    </div>
     </main>
     <!--The footer uses the footer tag and typically contains contact info and copyright. It is repeated on every page.-->
     <footer>
