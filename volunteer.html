@@ -14,7 +14,7 @@
     <header>
         <!--This is the navigation section to include links to my other pages which will be set up one one line and is repeated on each page.--> 
         <nav class="navbar">
-            <img class=logo src="Images/MI-icon-brand-white.svg" alt="icon of Michigan with a leaf">
+            <a href="index.html"><img src="Images/MI-icon-brand-white.svg" class="logo" alt="icon of Michigan with a leaf"></a>
             <a href="index.html">Home</a>
             <a href="shop.html">Shop Sustainably</a>
             <a href="eat.html">Eat for the Planet</a>
@@ -45,28 +45,28 @@
                 <!--the form begins here and the first fields to be filled out are the main contact information. I'm using Placeholders rather than Labels here-->
                 <form>
                     <input type="text" name="name" placeholder="Name"><br>
-                    <input type="text" name="email_address" placeholder="Email Address"><br>
+                    <input type="email" name="email_address" placeholder="Email Address"><br>
                     <input type="tel" name="phone" placeholder="Phone Number"><br><br>
 
                     <!--this section of the form contains a radio input type which displays a list of which the user must choose only one-->
-                    <label for="region">In what region do you live?</label>
+                    <p class="form-questions">In what region do you live?</p>
                     <div>    
                         <input type="radio" name="region" value="Upper Peninsula">Upper Peninsula<br>
                         <input type="radio" name="region" value="Northern Michigan">Northern Michigan<br>
                         <input type="radio" name="region" value="West Michigan">West Michigan<br>
                         <input type="radio" name="region" value="Central Michigan">Central Michigan<br>
                         <input type="radio" name="region" value="Southeast Michigan">Southeast Michigan<br>
-                        <input type="radio" name="region" value="I'm Not a Michigander">I'm Not a Michigander<br>
+                        <input type="radio" name="region" value="I'm Not a Michigander">I'm Not a Michigander<br><br>
                     </div>
 
                      <!--This field allows a user to enter a number no less than 1 and no more than 7-->
-                     <label for="daysavailable">How many days per week can you volunteer?</label>
+                     <label for="daysavailable">How many days per week can you volunteer?</label><br><br>
                      <div>
-                        <input type="number" name="daysavailable" min="1" max="7" step="1">
+                        <input type="number" name="daysavailable" id="daysavailable" min="1" max="7" step="1">
                     </div>
 
                     <!--this input is a checklist where the user can choose more than one, checking and unchecking as needed-->
-                    <label for="available-days">Which days of the week? (Check all available)</label>
+                    <p class="form-questions">Which days of the week? (Check all available)</p>
                     <div>
                         <input type="checkbox" name="sunday" value="Sunday">Sunday<br>
                         <input type="checkbox" name="monday" value="Monday">Monday<br>
@@ -78,20 +78,20 @@
                     </div>
 
                     <!--this input is aso a checkbox and can also have more than one choice-->
-                    <label for="contact-method">How would you like us to contact you?</label>
+                    <p class="form-questions">How would you like us to contact you?</p>
                     <div>
                         <input type="checkbox" name="contact_email" value="Email Me">Email Me
                         <input type="checkbox" name="contact_phone" value="Call Me">Call Me
                     </div>
         
                     <!--the date input type displays a calendar for the user to choose a date-->
-                    <label for="start_date">What date could you start volunteering?</label>
+                    <label for="startdate">What date could you start volunteering?</label><br><br>
                     <div>
-                        <input type="date" name="start_date">
+                        <input type="date" name="start_date" id="startdate">
                     </div>
                     <!--The select tag allows a dropdown of options to choose one item. For the next two sections of the form
                         I used the select tag and included an ID and applied a label to it.-->
-                    <label>We provide all our volunteers with a tee-shirt.</label><br>
+                    <p class="form-questions">We provide all our volunteers with a tee-shirt.</p>
                     <label for="colors">Choose a color:</label>
                         <select id="colors">
                             <option value="green">Green</option>
@@ -101,7 +101,7 @@
                             <option value="pink">Pink</option>
                             <option value="purple">Purple</option>
                             <option value="blue">Blue</option>
-                        </select>
+                        </select><br>
 
                     <label for="size">Choose a size:</label>
                         <select id="size">
@@ -118,7 +118,7 @@
                         </select><br>
 
                     <!--The textarea tag will display a box that allows a user to add and edit text within. It's used as a questions/comments box in this instance--> 
-                    <label for="comments">Do you have any questions or comments?</label>
+                    <p class="form-questions">Do you have any questions or comments?</p>
                     <div>
                         <textarea rows="4" cols="50"></textarea><br><br>
                     </div>

@@ -1,4 +1,4 @@
-
+/*This defines the brand's primary colors to be used as variables as well as font defaults*/
 :root {
     --brand-primary: #285943;
     --brand-secondary: #185E5C;
@@ -8,25 +8,26 @@
     --brand-brown: #4B1B24;
     --brand-black: #1E0B0E;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1rem;
 }
+/*Set a 0 margin to allow background colors to fill the entire screen*/
 body {
     margin: 0px;
 }
 
+/*Use flexbox so the items in the header line up well*/
 header {
-    display: flexbox;
+    display: flex;
     flex-direction: column;
     margin: 0px;
 }
 
-main {
-    width: 100%;
-}
-
-.container {
+/*I added a container but nothing happens when I comment out so need to come back to this*/
+/* .container {
     margin: 0 auto;
-}
+} */
 
+/*Navigation background, font colors, and layout. This also ensure the navigation stays at the top when the user scrolls*/
 .navbar {
     display: flex;
     justify-content: space-around;
@@ -34,24 +35,33 @@ main {
     width: 100%;
     height: 7rem;
     background-color: var(--brand-primary);
-    font-size: 1.5rem;
     color: var(--brand-white);
     position: fixed;
     top: 0;
     left: 0;
 }
 
+/* The link has to be targeted for the default font color and to change color on hover. Any non-link fonts that may be in the
+ navbar are defined above. I was able to use clamp here to make sure the font got small enough to for mobile but not too large
+ for really big screens. */
 .navbar a {
     color: var(--brand-white);
+    font-size: clamp(.5rem, 2vw, 1.5rem);
 }
 
 .navbar a:hover {
     color: var(--brand-pink);
 }
 
+/*This is to indicate the page that is active but apparently needs javascript to work, so I'll leave it for now until we learn javascript*/
+.navbar a:active {
+    color: var(--brand-brown);
+}
+
+/*The appearance of the different heading and paragraph text is defined in these sections*/
 h1 {
     color: var(--brand-primary);
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: bold;
     text-align: center;
     background-color: var(--brand-white);
@@ -61,14 +71,14 @@ h1 {
 
 h2 {
     color: var(--brand-primary);
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: bold;
     text-align: center;
 }
 
 h3 {
     color: var(--brand-white);
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: bold;
 }
 
@@ -82,11 +92,16 @@ a {
     text-decoration: none;
 }
 
-ul {
+/*The appearance of the text in unordered and ordered lists is defined here. I'm using the same color and font size for both.
+If a list contains a link that will default to brand-primary because <a> is defined with that default above*/
+ul, ol {
     color: var(--brand-white);
-    font-size: 1.3rem;
 }
 
+
+/*Unless specified with a different class, all images on the site will be created this way. The height will be defined in HTML
+since the height of images throughout the site will likely not be the same on every pag, with the exception of a carousel which
+has its own class*/
 img {
     border-style: inset;
     border-width: .75rem;
@@ -94,10 +109,13 @@ img {
     border-radius: 1rem;
 }
 
+/*Here I'm setting the size and appearance of the icon used as the logo to ensure it fits and looks good in the navbar*/
 .logo {
     width: 75px;
     border: none;
 }
+
+/*Every page will have a full-width hero image and I want them all to be the same height and appearance for consisistency*/
 .hero-image {
     width: 100%;
     object-fit: cover;
@@ -108,9 +126,13 @@ img {
     margin-bottom: -.2rem;
 }
 
+/*I have 3 different backgrounds that can be used for any sections on the page. I want to keep it consistent and ensure only
+brand colors are used. Because I defined a default color for H2s to be brand-green I have to target the h2 for the green
+background to use a different color font for h2. I also have to be specific for <li> for certain background colors*/
 .green-background, .pink-background, .white-background { 
     width: 100%; 
     padding: 1rem 4rem;
+    box-sizing: border-box;
   }
 
 .green-background {
@@ -125,33 +147,135 @@ img {
     background-color: var(--brand-pink);
 }
 
+.pink-background li {
+    color: var(--brand-primary);
+}
+
+.pink-background a:hover {
+    color: var(--brand-white);
+}
+
 .white-background {
     background-color: var(--brand-white);
 }
 
+.white-background li {
+    color: var(--brand-primary);
+}
+
+.white-background a:hover {
+    color: var(--brand-pink);
+}
+
+/*I set the image-carousel to flex so that I could space out the row of 6 images evenly*/
 .image-carousel {
     display: flex;
     justify-content: space-evenly;
-}
+    flex-wrap: wrap;
+ }
 
-.table {
+ /*The image had to be targeted with a specific height since i'm using images of different sizes */
+ .image-carousel img {
+    height: 150px;
+    margin-bottom: 1rem;
+ }
+
+ /*the table was placed within a grid-container to allow some flexiblity with CSS for the entire box*/
+.grid-container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: auto auto auto;
+    background-color: var(--brand-white);
+    width: 100%;
 }
 
-.grid-table tr td {
+/*The table class defines how wide the columns are with the left one being twice as wide as the rest and the rows */
+.table {
+    border-collapse: collapse;
+    grid-template-columns: 40% 20% 20% 20%;
+    grid-template-rows: auto auto auto;
+    color: var(--brand-black);
     font-size: 1.3rem;
-    color: var(--brand-white)
 }
+
+/*This gives the table header a different background to match the left column and changes the font color for better readability*/
+.table th {
+    background-color: var(--brand-secondary);
+    color: var(--brand-white);
+}
+
+/*Left-justify text in the cells and apply padding and a border to all cells*/
+.table th, td {
+    text-align: left;
+    border-bottom: 1px solid var(--brand-black);
+    padding: 1rem;
+}
+
+/*Give only the first column a right border and a different background*/
+.table th:first-child,
+.table td:first-child {
+  border-right: 1px solid var(--brand-black);
+  background-color: var(--brand-secondary);
+  color: var(--brand-white);
+}
+
+/*Give the forms a background and padding to indent past the other paragraphs as well as a font that works wiht the background*/
 .form {
     background-color: var(--brand-blue);
-    padding: 2rem;
+    padding: 1rem 8rem;
     color: var(--brand-white);
-    font-size: 1.5rem;
+    font-size: 1.3rem;
 }
+
 .form h2 {
     color: var(--brand-white);
+}
+
+.form-questions {
+    color: var(--brand-pink);
+    font-size: 1.4rem;
+    font-weight: bolder;
+}
+
+form input, form textarea {
+    background: var(--brand-white);
+    border: 1px solid var(--brand-white);
+    padding: .5rem;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"], 
+textarea {
+    width: 100%;
+    border-bottom: 1px solid var(--brand-black);
+}
+
+form input[type="reset"],
+form input[type="submit"] {
+    border-radius: 3px;
+    border-color: var(--brand-black);
+    background-color: var(--brand-black);
+    color: var(--brand-white);
+    font-size: 1.2rem;
+}
+
+form input[type="radio"],
+form input[type="checkbox"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: var(--brand-white);
+    accent-color: var(--brand-black);
+}
+input[type="radio"]:checked,
+input[type="checkbox"]:checked {
+  background-color: var(--brand-black);
+  border-color: var(--brand-black);
+}
+/*Define styles for the select box*/
+select {
+    background-color: var(--brand-white);
+    font-size: 1rem; 
+    border: none;
 }
 
 footer {
