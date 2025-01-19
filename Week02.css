@@ -225,6 +225,7 @@ background to use a different color font for h2. I also have to be specific for 
     font-size: 1.3rem;
 }
 
+/*The next two sections target the h2 and the questions for each response to apply a different font treatment*/
 .form h2 {
     color: var(--brand-white);
 }
@@ -235,6 +236,8 @@ background to use a different color font for h2. I also have to be specific for 
     font-weight: bolder;
 }
 
+/*All of the input types needed to have targeted CSS to use the brand white intead of default white for backgrounds, apply 
+radius etc to buttons, adjust font size, etc.*/
 form input, form textarea {
     background: var(--brand-white);
     border: 1px solid var(--brand-white);
@@ -258,6 +261,8 @@ form input[type="submit"] {
     font-size: 1.2rem;
 }
 
+/*Here I found that I needed to reset the defaults for radio and checkbox in order to give those the background colors I chose
+when checked and unchecked*/
 form input[type="radio"],
 form input[type="checkbox"] {
     -webkit-appearance: none;
@@ -271,6 +276,7 @@ input[type="checkbox"]:checked {
   background-color: var(--brand-black);
   border-color: var(--brand-black);
 }
+
 /*Define styles for the select box*/
 select {
     background-color: var(--brand-white);
@@ -278,6 +284,7 @@ select {
     border: none;
 }
 
+/*give the footer a different background color and refine the styling*/
 footer {
     background-color: var(--brand-black);
     padding: 2rem;
